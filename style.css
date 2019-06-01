@@ -1,0 +1,18 @@
+body {
+    background-color: #e1e1e1;
+    font-variant: small-caps;
+}
+.field {
+    background-color: #f0f0f0;
+    border: none;
+    width: 70px;
+}
+form{
+    float: right;
+}
+canvas {
+    float: left;
+}
+p {
+    float: right;
+}

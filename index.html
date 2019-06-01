@@ -1,0 +1,66 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/p5.min.js"></script>
+    <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.dom.min.js"></script>
+    <script language="javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.3/addons/p5.sound.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<script>
+</script>
+
+<body>
+<form autocomplete="off">
+    Z value: <input type="text" class="field" id="zstep" name="zstep" autocomplete="off"/><br/>
+    Main color: <input type="color" class="field" id="maincolor" name="maincolor"/><br/>
+    Alpha: <input type="text" class="field" id="alpha" name="alpha" value="5" autocomplete="off"/><br/>
+    Background color: <input type="color" class="field" id="bgcolor" name="bgcolor" value="#000000"/><br/>
+    Canvas size: <input type="text" class="field" id="width" name="width" value="1200" autocomplete="off"/>
+    x<input type="text" class="field" id="height" name="height" value="600" autocomplete="off"/><br/>
+    # of particles: <input type="text" class="field" id="particles" name="particles" value="1000" autocomplete="off"/><br/>
+    Max speed: <input type="text" class="field" id="speed" name="speed" value="4" autocomplete="off"/><br/>
+    Rainbow? <input type="checkbox" class="field" id="rainbow" name="rainbow"/><br/>
+    <input type="button" value="Reload" onclick="reloadForm()"/>
+    <input type="button" value="Pause" id="pause" onclick="handlePause()"/>
+</form>
+<script>
+    if(localStorage.zstep){
+        document.getElementById("zstep").value = localStorage.zstep;
+    }
+    else{
+        document.getElementById("zstep").value = "0.001";
+    }
+
+    if(localStorage.mainColor){
+        document.getElementById("maincolor").value = localStorage.mainColor;
+    }
+    if(localStorage.alpha){
+        document.getElementById("alpha").value = localStorage.alpha;
+    }
+    if(localStorage.bgColor){
+        document.getElementById("bgcolor").value = localStorage.bgColor;
+    }
+
+    if(localStorage.width){
+        document.getElementById("width").value = localStorage.width;
+    }
+    if(localStorage.height){
+        document.getElementById("height").value = localStorage.height;
+    }
+
+    if(localStorage.particles){
+        document.getElementById("particles").value = localStorage.particles;
+    }
+    if(localStorage.speed){
+        document.getElementById("speed").value = localStorage.speed;
+    }
+
+    if(localStorage.rainbow){
+        document.getElementById("rainbow").checked = localStorage.rainbow === "true";
+    }
+</script>
+<script language="javascript" type="text/javascript" src="sketch.js"></script>
+<script language="javascript" type="text/javascript" src="particle.js"></script>
+</body>
+</html>
